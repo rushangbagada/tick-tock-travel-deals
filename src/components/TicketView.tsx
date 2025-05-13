@@ -5,7 +5,7 @@ import QRCodeGenerator from "./QRCodeGenerator";
 import CountdownTimer from "./CountdownTimer";
 import TicketDetails from "./TicketDetails";
 import PaytmLogo from "./PaytmLogo";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { QrCode } from "lucide-react";
 
 interface TicketViewProps {
@@ -42,8 +42,17 @@ const TicketView: React.FC<TicketViewProps> = ({
         <span className="text-paytm-blue font-medium">Help</span>
       </div>
 
+      {/* Route Display */}
+      <div className="px-6 pt-4 flex items-center justify-center">
+        <div className="flex items-center justify-center space-x-3">
+          <span className="font-semibold text-gray-800">{source}</span>
+          <ArrowRight className="h-5 w-5 text-paytm-blue" />
+          <span className="font-semibold text-gray-800">{destination}</span>
+        </div>
+      </div>
+
       {/* QR Section */}
-      <div className="px-6 pt-6">
+      <div className="px-6 pt-4">
         <p className="text-center text-gray-600 mb-4">
           Scan this QR at Entry & Exit Points
         </p>
